@@ -20,7 +20,11 @@
   },
   "dependencies": {
     "@extension/shared": "workspace:*",
-    "@extension/storage": "workspace:*"
+    "@extension/storage": "workspace:*",
+    "ahooks": "^3.8.1",
+    "antd": "^5.21.6",
+    "dayjs": "^1.11.13",
+    "vite-plugin-compression": "^0.5.1"
   },
   "devDependencies": {
     "@extension/tsconfig": "workspace:*",
