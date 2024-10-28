@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'antd';
+import { Button, Card } from 'antd';
 
 const App: React.FC = () => {
   const displayBookmarks = async () => {
@@ -9,7 +9,9 @@ const App: React.FC = () => {
 
   return (
     <>
-      <Button onClick={displayBookmarks}>App</Button>
+      <Card>
+        <Button onClick={displayBookmarks}>App</Button>
+      </Card>
     </>
   );
 };
