@@ -1,0 +1,5 @@
+
+.turbo
+chrome-extension/node_modules
+dist
+node_modules
