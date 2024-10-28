@@ -20,7 +20,7 @@ const sidePanelConfig = {
 const manifest = deepmerge(
   {
     manifest_version: 3,
-    default_locale: 'en',
+    // default_locale: 'en',
     /**
      * if you want to support multiple languages, you can use the following reference
      * https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Internationalization
@@ -46,18 +46,18 @@ const manifest = deepmerge(
       128: 'icon-128.png',
     },
     content_scripts: [
-      {
-        matches: ['http://*/*', 'https://*/*', '<all_urls>'],
-        js: ['content/index.iife.js'],
-      },
-      {
-        matches: ['http://*/*', 'https://*/*', '<all_urls>'],
-        js: ['content-ui/index.iife.js'],
-      },
-      {
-        matches: ['http://*/*', 'https://*/*', '<all_urls>'],
-        css: ['content.css'], // public folder
-      },
+      // {
+      //   matches: ['http://*/*', 'https://*/*', '<all_urls>'],
+      //   js: ['content/index.iife.js'],
+      // },
+      // {
+      //   matches: ['http://*/*', 'https://*/*', '<all_urls>'],
+      //   js: ['content-ui/index.iife.js'],
+      // },
+      // {
+      //   matches: ['http://*/*', 'https://*/*', '<all_urls>'],
+      //   css: ['content.css'], // public folder
+      // },
     ],
     // devtools_page: 'devtools/index.html',
     web_accessible_resources: [

@@ -1,0 +1,13 @@
+.app {
+  height: 100%;
+}
+
+.card-wrapper {
+  height: 100%;
+  align-items: flex-start
+}
+
+.card {
+  width: 46%;
+  margin-top: 140px;
+}

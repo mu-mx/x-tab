@@ -19,6 +19,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.5.1",
     "@extension/shared": "workspace:*",
     "@extension/storage": "workspace:*",
     "ahooks": "^3.8.1",
