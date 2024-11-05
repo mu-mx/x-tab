@@ -1,57 +1,49 @@
 {
-  "name": "chrome-extension-boilerplate-react-vite",
-  "version": "0.3.3",
-  "description": "chrome extension boilerplate",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite.git"
-  },
+  "name": "nice-tab",
+  "description": "OneTab的升级替代品, 功能丰富易用并且开源的标签页管理器 | A nice, convenient, powerful tab manager [open source]",
+  "private": true,
+  "version": "2.5.2",
   "type": "module",
   "scripts": {
-    "clean:bundle": "rimraf dist && rimraf dist-zip && turbo clean:bundle",
-    "clean:node_modules": "turbo daemon stop && pnpx rimraf node_modules && pnpx turbo clean:node_modules",
-    "clean:turbo": "turbo daemon stop && rimraf .turbo && turbo clean:turbo",
-    "clean": "pnpm clean:bundle && pnpm clean:turbo && pnpm clean:node_modules",
-    "clean:install": "pnpm clean:node_modules && pnpm install --frozen-lockfile",
-    "build": "pnpm clean:bundle && turbo ready && turbo build",
-    "build:firefox": "pnpm clean:bundle && turbo ready && cross-env __FIREFOX__=true turbo build",
-    "zip": "pnpm build && pnpm -F zipper zip",
-    "zip:firefox": "pnpm build:firefox && cross-env __FIREFOX__=true pnpm -F zipper zip",
-    "dev": "turbo ready && cross-env __DEV__=true turbo watch dev --concurrency 20",
-    "dev:firefox": "turbo ready && cross-env __DEV__=true __FIREFOX__=true turbo watch dev --concurrency 20",
-    "e2e": "pnpm build && pnpm zip && turbo e2e",
-    "e2e:firefox": "pnpm build:firefox && pnpm zip:firefox && cross-env __FIREFOX__=true turbo e2e",
-    "update-version": "bash update_version.sh"
+    "dev": "wxt",
+    "dev:firefox": "wxt -b firefox",
+    "build": "wxt build",
+    "build:firefox": "wxt build -b firefox",
+    "zip": "wxt zip",
+    "zip:firefox": "wxt zip -b firefox",
+    "compile": "tsc --noEmit",
+    "postinstall": "wxt prepare"
   },
   "dependencies": {
-    "prettier": "^3.3.3",
-    "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "@ant-design/colors": "^7.0.2",
+    "@ant-design/icons": "^5.3.6",
+    "@atlaskit/pragmatic-drag-and-drop": "^1.1.7",
+    "@atlaskit/pragmatic-drag-and-drop-hitbox": "^1.0.3",
+    "@atlaskit/pragmatic-drag-and-drop-react-drop-indicator": "^1.1.1",
+    "antd": "^5.16.4",
+    "dayjs": "^1.11.11",
+    "emoji-regex": "^10.3.0",
+    "file-saver": "^2.0.5",
+    "hotkeys-js": "^3.13.7",
+    "lodash-es": "^4.17.21",
+    "mitt": "^3.0.1",
+    "react": "^18.3.1",
+    "react-copy-to-clipboard": "^5.1.0",
+    "react-dom": "^18.3.1",
+    "react-intl": "^6.6.8",
+    "react-router-dom": "^6.23.0",
+    "react-virtuoso": "^4.10.4",
+    "styled-components": "^6.1.8",
+    "webdav": "^5.7.1"
   },
   "devDependencies": {
-    "@types/chrome": "^0.0.270",
-    "@types/node": "^20.16.5",
+    "@types/file-saver": "^2.0.7",
+    "@types/lodash-es": "^4.17.12",
     "@types/react": "^18.3.3",
+    "@types/react-copy-to-clipboard": "^5.0.7",
     "@types/react-dom": "^18.3.0",
-    "@typescript-eslint/eslint-plugin": "^7.18.0",
-    "@typescript-eslint/parser": "^7.18.0",
-    "autoprefixer": "^10.4.20",
-    "cross-env": "^7.0.3",
-    "esbuild": "^0.23.0",
-    "rimraf": "^6.0.1",
-    "tslib": "^2.6.3",
-    "turbo": "^2.0.12",
-    "typescript": "5.5.4",
-    "vite": "5.4.9"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx,json}": [
-      "prettier --write"
-    ]
-  },
-  "packageManager": "pnpm@9.9.0",
-  "engines": {
-    "node": ">=18.19.1"
+    "@wxt-dev/module-react": "^1.1.0",
+    "typescript": "^5.5.4",
+    "wxt": "^0.19.9"
   }
 }
