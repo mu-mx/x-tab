@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.less';
+import './style.less';
 import { App, Button, ConfigProvider, Layout, Menu } from 'antd';
 import {
   AppstoreOutlined,
@@ -10,8 +10,10 @@ import {
   SettingOutlined,
   SyncOutlined,
 } from '@ant-design/icons';
-import { createHashRouter, RouterProvider } from 'react-router-dom';
+import { createHashRouter, Outlet, RouterProvider } from 'react-router-dom';
 import { pick } from 'lodash-es';
+
+import Home from '@/entrypoints/options/pages/home';
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -25,7 +27,9 @@ const LayoutComponent = (param: any) => {
           <Button type="primary">156161</Button>
         </div>
       </Header>
-      <Content>Content</Content>
+      <Content>
+        <Outlet />
+      </Content>
     </>
   );
 };
@@ -33,35 +37,35 @@ const LayoutComponent = (param: any) => {
 const items = [
   {
     key: 'home',
-    label: 'common.list',
+    label: '首页',
     path: '/home',
     icon: <HomeOutlined />,
-    // element: <Home />,
+    element: <Home />,
   },
   {
     key: 'settings',
-    label: 'common.settings',
+    label: '设置',
     path: '/settings',
     icon: <SettingOutlined />,
     // element: <Settings />,
   },
   {
     key: 'import-export',
-    label: 'common.importExport',
+    label: '导入/导出',
     path: '/import-export',
     icon: <ImportOutlined />,
     // element: <ImportExport />,
   },
   {
     key: 'sync',
-    label: 'common.sync',
+    label: '同步',
     path: '/sync',
     icon: <SyncOutlined />,
     // element: <SyncPage />,
   },
   {
     key: 'recycleBin',
-    label: 'common.recycleBin',
+    label: '回收站',
     path: '/recycle',
     icon: <RestOutlined />,
     // element: <RecycleBin />,

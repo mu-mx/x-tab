@@ -1,12 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import Root from '~/entrypoints/common/components/Root.tsx';
-import App from './App.tsx';
+import { createRoot } from 'react-dom/client';
+import App from './App';
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <Root>
-      <App />
-    </Root>
-  </React.StrictMode>,
-);
+const root = createRoot(document.getElementById('root')!);
+root.render(<App />);
