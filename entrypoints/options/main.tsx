@@ -1,13 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Root from '~/entrypoints/common/components/Root.tsx';
-import App from './App.tsx';
+import AppComponent from './App.tsx';
+import 'antd/dist/reset.css';
+import './index.less';
 
-
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <Root>
-      <App />
-    </Root>
-  </React.StrictMode>,
-);
+ReactDOM.createRoot(document.getElementById('root')!).render(<AppComponent />);
